@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Ops+One&family=Oswald:wght@700&family=Share+Tech+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+  --font-stencil: "StencilStd", monospace;
+  --font-stencil: "Black Ops One", system-ui;
+  --color-neon: #FFFFFF;
+}
+
+@font-face {
+  font-family: 'StencilStd';
+  src: url("../public/fonts/Stencil-Std-Bold/Stencil\ Std\ Bold.otf") format("opentype");
+}
