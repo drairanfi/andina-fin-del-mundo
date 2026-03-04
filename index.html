@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Andina fin del mundo</title>
   </head>
   <body>
     <div id="root"></div>
     <script>
-      // Fix for "Cannot set property fetch of #<Window> which has only a getter"
-      // This error occurs when a library tries to overwrite window.fetch in an environment where it is read-only.
       try {
         const fetchDescriptor = Object.getOwnPropertyDescriptor(window, 'fetch');
         if (fetchDescriptor && fetchDescriptor.configurable) {
