@@ -211,7 +211,7 @@ const CrossedMarquees = () => {
           ))}
         </motion.div>
       </div>
-    </div>
+    </div> 
   );
 };
 
