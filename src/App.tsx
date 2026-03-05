@@ -175,23 +175,21 @@ const CrossedMarquees = () => {
   return (
     <div className="absolute inset-0 z-0 h-full w-full overflow-hidden pointer-events-none translate-y-[12px] md:translate-y-[80px]">
       {/* Static Strip - Tilted down-right */}
-      <div className="absolute md:top-[24%] top-[17%] -left-10 w-[120vw] bg-black py-2 -rotate-6 md:rotate-3 translate-y-5 border-y-2 border-white transform-gpu opacity-90">
+      <div className="absolute md:top-[30%] top-[17%] -left-10 w-[120vw] bg-black py-2 -rotate-6 md:rotate-3 translate-y-5 border-y-2 border-white transform-gpu opacity-90">
         <div
           className="flex whitespace-nowrap"
         >
           {[...Array(20)].map((_, i) => (
             <span
               key={i}
-              className="mx-4 font-stencil text-[10px] md:text-xl font-black tracking-widest text-white uppercase"
-            >
-              PELIGRO •
-            </span>
+              className=" mx-1 font-stencil text-[10px] md:text-xl font-black tracking-widest text-white uppercase"
+            > EL FIN LLEGÓ •</span>
           ))}
         </div>
       </div>
 
       {/* White Strip - Tilted up-right (crossing) */}
-      <div className="absolute  top-[22%] md:top-[27%] -left-10 w-[120vw] bg-white py-2 rotate-6 md:-rotate-2 -translate-y-5 shadow-lg mix-blend-hard-light transform-gpu opacity-90">
+      <div className="absolute  top-[22%] md:top-[32%] -left-10 w-[120vw] bg-white py-2 rotate-6 md:-rotate-2 -translate-y-5 shadow-lg mix-blend-hard-light transform-gpu opacity-90">
         <motion.div
           className="flex whitespace-nowrap"
           animate={{ x: [-1000, 0] }}
@@ -204,7 +202,7 @@ const CrossedMarquees = () => {
           {[...Array(20)].map((_, i) => (
             <span
               key={i}
-              className="mx-4 font-stencil text-[10px] md:text-xl font-black tracking-widest text-black uppercase"
+              className="mx-2 font-stencil text-[10px] md:text-xl font-black tracking-widest text-black uppercase"
             >
               NO ES COINCIDENCIA. NO ES UNA TEORÍA. EL RELOJ YA EMPEZÓ. •
             </span>
@@ -660,7 +658,7 @@ const ManifestoCard: React.FC<ManifestoCardProps> = ({
 
         {/* Content Container with 16px padding (p-4) - Adjusted pb-2 for 8px bottom gap */}
         <motion.div
-          className={`relative flex h-full w-full flex-col items-center pt-4 px-4 ${isExpanded ? 'pb-2' : 'pb-4'} text-center`}
+          className={`relative flex h-full w-full flex-col items-center pt-4 px-4 ${isExpanded ? 'pb-7' : 'pb-4'} text-center`}
           animate={isFlickering ? { x: [-2, 2, -1, 1, 0] } : { x: 0 }}
           transition={isFlickering ? { duration: 0.05, repeat: Infinity } : {}}
         >
@@ -749,14 +747,13 @@ const ManifestoSection = () => {
       ]
     },
     {
-      title: "COMPORTAMIENTO ANIMAL",
+      title: "¡ATLAS 31 se acerca!",
       copy: [
-        "Rutas alteradas.",
-        "Migraciones fuera de tiempo.",
-        "Silencios donde antes había ruido.",
-        "Explosiones donde antes había tranquilidad.",
-        "Ellos reaccionan antes.",
-        "Nosotros entendemos después."
+        "Un momento donde todo cambia.",
+        "Donde lo que parecía estable.",
+        "Se mueve.",
+        "El cambio sucede.",
+        "Todo apunta a lo mismo.",
       ]
     },
     {
@@ -846,9 +843,9 @@ const CountdownBox: React.FC<{ interval: string, value: number, isTransitioning:
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%)' }}
       />
       
-      {/* Main Container */}
+      {/* TARGETS-DATE */}
       <div 
-        className="relative flex w-full aspect-square flex-col items-center justify-center overflow-hidden border-2 border-white bg-black md:h-32 md:w-32"
+        className="relative flex w-full aspect-square flex-col items-center justify-center overflow-hidden border-2 border-white bg-black md:h-45 md:w-45"
         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%)' }}
       >
         {/* Urban Texture: Scanlines */}
@@ -857,7 +854,7 @@ const CountdownBox: React.FC<{ interval: string, value: number, isTransitioning:
         {/* Glitch Decoration: Top Bar */}
         <div className="absolute top-0 left-0 h-1 w-full bg-white/20" />
         
-        <span className="font-stencil text-[8vw] md:text-6xl font-bold text-[var(--color-neon)] drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
+        <span className="font-stencil text-[8vw] md:text-[76px] font-bold text-[var(--color-neon)] drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
           {String(value).padStart(2, '0')}
         </span>
         
@@ -868,7 +865,7 @@ const CountdownBox: React.FC<{ interval: string, value: number, isTransitioning:
 
       {/* Label Tape */}
       <div className="absolute -bottom-3 z-10 -rotate-2 bg-white px-2 py-0.5 shadow-lg">
-        <span className="font-stencil text-xs font-black tracking-[0.2em] text-black uppercase">
+        <span className="font-stencil text-[18px] font-black tracking-[0.2em] text-black uppercase">
           {interval}
         </span>
       </div>
@@ -917,7 +914,7 @@ const Countdown = ({ onZero, isTransitioning }: { onZero?: () => void, isTransit
   const timeKeys = Object.keys(timeLeft) as Array<keyof typeof timeLeft>;
 
   return (
-    <div className="mt-[112px] md:mt-[68px] flex w-full flex-nowrap justify-between gap-2 md:justify-center md:gap-6">
+    <div className="mt-[120px] md:mt-[37px] flex w-full flex-nowrap justify-between gap-2 md:justify-center md:gap-6">
       {timeKeys.map((interval, idx) => (
         <CountdownBox 
           key={interval as string} 
@@ -961,8 +958,8 @@ const GlitchChar = ({ char, trigger, delay }: { char: string, trigger: number, d
 
 const TitleGlitchWord = () => {
   return (
-    <div className="flex items-center justify-center -mt-2 md:-mt-4 text-white scale-[0.85] md:scale-90">
-      AC3RCA
+    <div className="flex items-center justify-center -mt-2 md:-mt-4 text-white scale-[0.85] md:scale-90 md:text-[12rem]">
+      ACERCA
     </div>
   );
 };
@@ -1018,10 +1015,10 @@ export default function App() {
 
             {/* Main Title */}
             <div className="relative z-10 -rotate-2 text-center translate-y-0 md:-translate-y-4 w-full">
-              <h1 className="relative z-20 mix-blend-difference font-stencil text-[22vw] leading-[0.8] font-black uppercase tracking-[0] md:text-8xl lg:text-[9rem]">
+              <h1 className="relative z-20 mix-blend-difference font-stencil text-[22vw] leading-[1] font-black uppercase tracking-[0] md:text-8xl lg:text-[9rem]">
                 <div className="block mb-2">
-                  <span className="text-[var(--color-neon)] flex items-center justify-center gap-2 md:gap-16 lg:gap-24 text-[5.6vw] md:text-xl lg:text-[2.5rem]">
-                    3L F1N D3L MUNDO S3
+                  <span className="text-[var(--color-neon)] flex items-center justify-center gap-2 md:gap-24 lg:gap-30 text-[5.6vw] md:text-xl lg:text-[3rem]">
+                    EL FIN DEL MUNDO SE
                   </span>
                 </div>
                 <TitleGlitchWord />
