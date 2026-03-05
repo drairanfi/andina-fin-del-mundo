@@ -436,7 +436,7 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowCTAs(true);
-    }, 20000);
+    }, 0);
     return () => clearTimeout(timer);
   }, []);
 
@@ -479,11 +479,10 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: showCTAs ? 1 : 0 }}
           transition={{ duration: 1 }}
-          style={{ pointerEvents: showCTAs ? 'auto' : 'none' }}
         >
           <GlitchCTA
             onClick={handleCopy}
-            className="w-80 bg-white text-black! border-black!"
+            className={`w-80 bg-white text-black! border-black! ${showCTAs ? 'pointer-events-auto! cursor-pointer' : 'pointer-events-none!'}`}
           >
             <span>{copied ? "¡Copiado!" : "Copiar Código"}</span>
             {copied ? <Check size={18} /> : <Copy size={18} />}
@@ -492,7 +491,7 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           <GlitchCTA
             href="https://www.rappi.com"
             isExternal
-            className="w-80"
+            className={`w-80 ${showCTAs ? 'pointer-events-auto! cursor-pointer' : 'pointer-events-none!'}`}
           >
             <span>Comprar en Rappi</span>
             <ExternalLink size={18} />
@@ -512,7 +511,7 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
       {/* Main Content: Video Only */}
       <div className="flex flex-1 flex-col gap-4">
         {/* Video Section (90%) */}
-        <div className="relative aspect-video w-[90%] mx-auto">
+        <div className="relative aspect-video w-[75%] mx-auto">
           <iframe
             className="h-full w-full shadow-2xl"
             src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&rel=0"
@@ -530,12 +529,11 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: showCTAs ? 1 : 0 }}
         transition={{ duration: 1 }}
-        style={{ pointerEvents: showCTAs ? 'auto' : 'none' }}
       >
         <GlitchCTA
           href="https://www.rappi.com"
           isExternal
-          className="w-full md:w-auto"
+          className={`w-full md:w-auto ${showCTAs ? 'pointer-events-auto! cursor-pointer' : 'pointer-events-none!'}`}
         >
           <span>Comprar en Rappi</span>
           <ExternalLink size={18} />
@@ -543,7 +541,7 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
 
         <GlitchCTA
           onClick={handleCopy}
-          className="w-full md:w-auto"
+          className={`w-full md:w-auto ${showCTAs ? 'pointer-events-auto! cursor-pointer' : 'pointer-events-none!'}`}
         >
           <span>{copied ? "¡Copiado!" : "Copiar Código"}</span>
           {copied ? <Check size={18} /> : <Copy size={18} />}
