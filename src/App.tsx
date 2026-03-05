@@ -482,21 +482,23 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
           style={{ pointerEvents: showCTAs ? 'auto' : 'none' }}
         >
           <GlitchCTA
+            onClick={handleCopy}
+            className="w-80 bg-white text-black! border-black!"
+          >
+            <span>{copied ? "¡Copiado!" : "Copiar Código"}</span>
+            {copied ? <Check size={18} /> : <Copy size={18} />}
+          </GlitchCTA>
+
+          <GlitchCTA
             href="https://www.rappi.com"
             isExternal
-            className="w-full md:w-auto"
+            className="w-80"
           >
             <span>Comprar en Rappi</span>
             <ExternalLink size={18} />
           </GlitchCTA>
 
-          <GlitchCTA
-            onClick={handleCopy}
-            className="w-full md:w-auto"
-          >
-            <span>{copied ? "¡Copiado!" : "Copiar Código"}</span>
-            {copied ? <Check size={18} /> : <Copy size={18} />}
-          </GlitchCTA>
+          
         </motion.div>
 
         <div className="flex items-center gap-4">
