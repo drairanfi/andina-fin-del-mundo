@@ -183,7 +183,7 @@ const CrossedMarquees = () => {
             <span
               key={i}
               className=" mx-1 font-stencil text-[10px] md:text-xl font-black tracking-widest text-white uppercase"
-            > EXTINCION • INMINENTE •</span>
+            > EL FIN LLEGÓ •</span>
           ))}
         </div>
       </div>
