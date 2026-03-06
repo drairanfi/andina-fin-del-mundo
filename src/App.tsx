@@ -482,7 +482,9 @@ const LivePage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
         >
           <GlitchCTA
             onClick={handleCopy}
-            className={`w-80 bg-white text-black! border-black! ${showCTAs ? 'pointer-events-auto! cursor-pointer' : 'pointer-events-none!'}`}
+            className={`w-80 bg-white !text-black !border-black sm:!bg-white sm:!text-black sm:!border-black ${
+  showCTAs ? '!pointer-events-auto cursor-pointer' : '!pointer-events-none'
+}`}
           >
             <span>{copied ? "¡Copiado!" : "Copiar Código"}</span>
             {copied ? <Check size={18} /> : <Copy size={18} />}
@@ -874,7 +876,7 @@ const CountdownBox: React.FC<{ interval: string, value: number, isTransitioning:
 };
 
 const Countdown = ({ onZero, isTransitioning }: { onZero?: () => void, isTransitioning: boolean }) => {
-  const targetDate = new Date('2026-03-12T00:00:00');
+  const targetDate = new Date('2026-03-13T18:00:00');
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   function calculateTimeLeft() {
@@ -1032,17 +1034,7 @@ export default function App() {
             </div>
 
             {/* Temporary Arrow Button */}
-            <motion.button
-              onClick={triggerTransition}
-              whileHover={{ 
-                x: [0, -2, 2, -1, 1, 0],
-                y: [0, 1, -1, 2, -2, 0],
-                transition: { duration: 0.2, repeat: Infinity }
-              }}
-              className="fixed bottom-20 right-8 z-50 text-white transition-colors hover:text-[var(--color-neon)]"
-            >
-              <ArrowRight size={29} />
-            </motion.button>
+            
           </motion.div>
         )}
 
